@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../components/Money/Money';
 import { Money } from '../components/Money/Money';
 import { Bet } from '../components/Bet/Bet';
+import { Hand } from '../components/Hand/Hand';
 export class Game extends Component {
   constructor() {
     super();
@@ -11,8 +12,8 @@ export class Game extends Component {
       winner: null,
       dealerHand: [],
       playerHand: [],
-      dealerScore: {},
-      playerScore: {},
+      dealerScore: { hardScore: 0, softScore: 0 },
+      playerScore: { hardScore: 0, softScore: 0 },
       isGameOn: false,
       betAmount: 0,
       totalMoney: 100,
@@ -21,6 +22,8 @@ export class Game extends Component {
       isHidden: true,
     };
     this.lockBet = this.lockBet.bind(this);
+    this.firstDeal = this.firstDeal.bind(this);
+    this.totalScore = this.totalScore.bind(this);
   }
 
   // creation of shuffled deck
@@ -82,7 +85,7 @@ export class Game extends Component {
   }
 
   // total score
-  totalScrore(score) {
+  totalScore(score) {
     if (score.hardScore === 21 || score.softScore === 21) return 21;
     if (score.softScore > 21) return score.hardScore;
     else {
@@ -93,15 +96,14 @@ export class Game extends Component {
   // hit - need to add feature to not be able to hit before hand is delt
   // removes a card from the deck and return the card
   hit(playerOrDealer) {
-    const { dealerHand, dealerScore, playerHand, playerScore } = this.state;
+    const { dealerScore, playerScore } = this.state;
     let unknownHand;
     let unknownScore;
     if (playerOrDealer === 'dealer') {
-      unknownHand = dealerHand;
+      unknownHand = 'dealerHand';
       unknownScore = dealerScore;
-    }
-    if (playerOrDealer === 'player') {
-      unknownHand = playerHand;
+    } else {
+      unknownHand = 'playerHand';
       unknownScore = playerScore;
     }
     const card = this.deal();
@@ -118,11 +120,11 @@ export class Game extends Component {
     if (winner === 'dealer') money = 0;
     if (winner === 'player') money *= 2;
     this.setState({
-      isPrivate: false,
       winner,
+      totalMoney: money,
+      isPrivate: false,
       isBetLocked: false,
       isDealOn: false,
-      totalMoney: money,
     });
   }
 
@@ -135,8 +137,8 @@ export class Game extends Component {
       this.hit('player');
       this.hit('dealer');
     }
-    const dealerTotalScore = this.totalScrore(dealerScore);
-    const playerTotalScore = this.totalScrore(playerScore);
+    const dealerTotalScore = this.totalScore(dealerScore);
+    const playerTotalScore = this.totalScore(playerScore);
     if (dealerTotalScore === 21 && playerTotalScore === 21) {
       this.winner('push');
       return;
@@ -159,8 +161,8 @@ export class Game extends Component {
   // gives game results
   results() {
     const { dealerScore, playerScore } = this.state;
-    const dealerFinalScore = this.totalScrore(dealerScore);
-    const playerFinalScore = this.totalScrore(playerScore);
+    const dealerFinalScore = this.totalScore(dealerScore);
+    const playerFinalScore = this.totalScore(playerScore);
     if (dealerFinalScore === playerFinalScore) {
       return 'PUSH';
     }
@@ -176,21 +178,37 @@ export class Game extends Component {
   stand() {
     const { isDealOn, dealerScore, playerScore } = this.state;
     if (!isDealOn) return;
-    const dealerTotalScore = this.totalScrore(dealerScore);
-    const playerTotalScore = this.totalScrore(playerScore);
+    const dealerTotalScore = this.totalScore(dealerScore);
+    const playerTotalScore = this.totalScore(playerScore);
     if (dealerTotalScore < 17) {
       this.hit('dealer');
       this.stand();
     }
+    // both player and dealer bust
     if (dealerTotalScore > 21 && playerTotalScore > 21) {
       this.winner('dealer');
       return;
     }
     const whoWon = this.results();
+    // update winner on who won;
+    this.winner(whoWon);
   }
 
   render() {
-    const { deck, isGameOn, betAmount, totalMoney } = this.state;
+    const {
+      isGameOn,
+      betAmount,
+      totalMoney,
+      dealerHand,
+      dealerScore,
+      playerHand,
+      playerScore,
+      isHidden,
+      isBetLocked,
+      winner,
+    } = this.state;
+    const { lockBet, firstDeal, totalScore } = this;
+
     // start game button
     let startButton = (
       <button onClick={() => this.createDeck()}>Start Game!</button>
@@ -205,7 +223,24 @@ export class Game extends Component {
           <Money betAmount={betAmount} totalMoney={totalMoney} />
         </header>
         {startButton}
-        <Bet lockBet={this.lockBet} />
+        <Bet
+          lockBet={lockBet}
+          firstDeal={firstDeal}
+          isBetLocked={isBetLocked}
+        />
+        <Hand
+          whoseHand='dealer'
+          hand={dealerHand}
+          score={dealerScore}
+          isHidden={isHidden}
+          totalScore={totalScore}
+        />
+        <Hand
+          whoseHand='player'
+          hand={playerHand}
+          score={playerScore}
+          totalScore={totalScore}
+        />
       </>
     );
   }
