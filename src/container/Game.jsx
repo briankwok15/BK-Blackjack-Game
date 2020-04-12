@@ -122,6 +122,10 @@ export class Game extends Component {
     this.setState({
       winner,
       totalMoney: money,
+      dealerHand: [],
+      playerHand: [],
+      dealerScore: {},
+      playerScore: {},
       isPrivate: false,
       isBetLocked: false,
       isDealOn: false,
@@ -241,6 +245,7 @@ export class Game extends Component {
           score={playerScore}
           totalScore={totalScore}
         />
+        {console.log('winner', winner)}
       </>
     );
   }

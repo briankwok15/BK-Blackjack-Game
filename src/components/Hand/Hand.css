@@ -1,0 +1,23 @@
+.card {
+  height: fit-content;
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 0.8rem;
+  margin-right: 1rem;
+}
+
+.hand {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/*height may need to be re-adjusted for hidden card to be responsive*/
+.hidden-card {
+  height: 6.3rem;
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 0.8rem;
+  margin-right: 1rem;
+  background-color: black;
+}

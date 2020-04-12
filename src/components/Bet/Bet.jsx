@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// TODO: Need to reset inputbox to empty string
+// TODO: Need to reset inputbox to empty string && input not a number
 
 /**
  * render:
