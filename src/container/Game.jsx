@@ -4,6 +4,7 @@ import '../components/Money/Money';
 import { Money } from '../components/Money/Money';
 import { Bet } from '../components/Bet/Bet';
 import { Hand } from '../components/Hand/Hand';
+import { Controls } from '../components/Controls/Controls';
 export class Game extends Component {
   constructor() {
     super();
@@ -245,7 +246,7 @@ export class Game extends Component {
           score={playerScore}
           totalScore={totalScore}
         />
-        {console.log('winner', winner)}
+        <Controls />
       </>
     );
   }
