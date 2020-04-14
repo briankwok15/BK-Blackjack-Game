@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './Bet.css';
+
 // TODO: Need to reset inputbox to empty string && input not a number
 
 /**

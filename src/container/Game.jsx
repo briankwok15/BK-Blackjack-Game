@@ -60,9 +60,8 @@ export class Game extends Component {
   // cannot re-bet
   lockBet(amount) {
     const { isGameOn, isBetLocked, totalMoney } = this.state;
-    if (!isGameOn) return;
-    if (isBetLocked) return;
-    if (amount > totalMoney) return;
+    if (!isGameOn || isBetLocked || isNaN(amount) || amount > totalMoney)
+      return;
     amount = parseInt(amount);
     this.setState((prevState) => ({
       isBetLocked: true,
@@ -252,7 +251,7 @@ export class Game extends Component {
 
   render() {
     const {
-      isGameOn,
+      isDealOn,
       betAmount,
       totalMoney,
       dealerHand,
@@ -308,7 +307,7 @@ export class Game extends Component {
           score={playerScore}
           totalScore={totalScore}
         />
-        <Controls hit={hit} stand={stand} />
+        <Controls hit={hit} stand={stand} isDealOn={isDealOn} />
         <footer>
           <DisplayWinner winner={winner} />
         </footer>
