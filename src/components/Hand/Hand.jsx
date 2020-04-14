@@ -10,6 +10,9 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
   const currentHand = hand.map((card, index) => {
     // css for hidden card
     let cardClassName = 'animated fadeInDown card';
+    if (card.suit === '♦' || card.suit === '♥') {
+      cardClassName = 'animated fadeInDown card-red';
+    }
     if (isHidden && index === 1) {
       cardClassName = 'animated fadeInDown hidden-card';
     }

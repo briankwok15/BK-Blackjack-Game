@@ -60,7 +60,13 @@ export class Game extends Component {
   // cannot re-bet
   lockBet(amount) {
     const { isGameOn, isBetLocked, totalMoney } = this.state;
-    if (!isGameOn || isBetLocked || isNaN(amount) || amount > totalMoney)
+    if (
+      !isGameOn ||
+      isBetLocked ||
+      isNaN(amount) ||
+      amount > totalMoney ||
+      amount === 0
+    )
       return;
     amount = parseInt(amount);
     this.setState((prevState) => ({
@@ -311,8 +317,7 @@ export class Game extends Component {
         <footer>
           <DisplayWinner winner={winner} />
         </footer>
-        {console.log('rounds', rounds)}
-        {console.log('deck length', deck.length)}
+        {console.log('amount', betAmount)}
       </>
     );
   }
