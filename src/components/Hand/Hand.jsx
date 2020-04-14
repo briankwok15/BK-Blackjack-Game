@@ -4,7 +4,7 @@ import { Score } from '../Score/Score';
 // REFACTOR using SASS?
 // to conditional render black and red cards - hidden and non-hidden cards?
 import './Hand.css';
-import '../../CSS/animate.css';
+import '../../Animate CSS/animate.css';
 
 export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
   const currentHand = hand.map((card, index) => {
