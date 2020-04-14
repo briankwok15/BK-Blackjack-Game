@@ -4,6 +4,9 @@
   border: 1px solid black;
   border-radius: 0.8rem;
   margin-right: 1rem;
+
+  /* animation-duration: 1; */
+  animation-iteration-count: 1;
 }
 
 .hand {
@@ -20,4 +23,7 @@
   border-radius: 0.8rem;
   margin-right: 1rem;
   background-color: black;
+
+  /* animation-duration: 1; */
+  animation-iteration-count: 1;
 }
