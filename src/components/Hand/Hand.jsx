@@ -11,8 +11,6 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
     let cardClassName = 'card';
     if (isHidden && index === 1) {
       cardClassName = 'hidden-card';
-      card.value = null;
-      card.suit = null;
     }
     return (
       <div className={cardClassName} key={index}>
