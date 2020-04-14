@@ -6,6 +6,7 @@ import { Bet } from '../components/Bet/Bet';
 import { Hand } from '../components/Hand/Hand';
 import { Controls } from '../components/Controls/Controls';
 import { DisplayWinner } from '../components/DisplayWinner/DisplayWinner';
+import { Logo } from '../components/Logo/Logo';
 
 import './Game.css';
 
@@ -276,7 +277,9 @@ class Game extends Component {
 
     // start game button
     let startButton = (
-      <button onClick={() => this.createDeck()}>Start Game!</button>
+      <button id='start-button' onClick={() => this.createDeck()}>
+        Start Game!
+      </button>
     );
     if (rounds !== 0) {
       startButton = null;
@@ -286,39 +289,54 @@ class Game extends Component {
     let newRoundButton = null;
     if (winner) {
       newRoundButton = (
-        <button onClick={() => this.newRound()}>New Round</button>
+        <button id='new-round-button' onClick={() => this.newRound()}>
+          New Round
+        </button>
       );
     }
 
     return (
       <>
-        <header>
-          <Money betAmount={betAmount} totalMoney={totalMoney} />
-        </header>
-        <div className='start-button-container'>{startButton}</div>
-        <div className='reload-button-container'>{newRoundButton}</div>
-        <Bet
-          lockBet={lockBet}
-          firstDeal={firstDeal}
-          isBetLocked={isBetLocked}
-        />
-        <Hand
-          whoseHand='dealer'
-          hand={dealerHand}
-          score={dealerScore}
-          isHidden={isHidden}
-          totalScore={totalScore}
-        />
-        <Hand
-          whoseHand='player'
-          hand={playerHand}
-          score={playerScore}
-          totalScore={totalScore}
-        />
-        <Controls hit={hit} stand={stand} isDealOn={isDealOn} />
-        <footer>
-          <DisplayWinner winner={winner} />
-        </footer>
+        <div className='game'>
+          <header>
+            <Logo />
+          </header>
+          <main>
+            <section>
+              <Money betAmount={betAmount} totalMoney={totalMoney} />
+            </section>
+            <section>
+              <div className='start-button-container'>{startButton}</div>
+              <div className='reload-button-container'>{newRoundButton}</div>
+            </section>
+            <section>
+              <Bet
+                lockBet={lockBet}
+                firstDeal={firstDeal}
+                isBetLocked={isBetLocked}
+              />
+            </section>
+            <section>
+              <Hand
+                whoseHand='dealer'
+                hand={dealerHand}
+                score={dealerScore}
+                isHidden={isHidden}
+                totalScore={totalScore}
+              />
+              <Hand
+                whoseHand='player'
+                hand={playerHand}
+                score={playerScore}
+                totalScore={totalScore}
+              />
+            </section>
+            <Controls hit={hit} stand={stand} isDealOn={isDealOn} />
+            <footer>
+              <DisplayWinner winner={winner} />
+            </footer>
+          </main>
+        </div>
       </>
     );
   }

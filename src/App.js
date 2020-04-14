@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Game from '../src/container/Game';
-import { Start } from '../src/components/Start/Start';
+import { Splash } from '../src/components/Splash/Splash';
 
 import './App.css';
 
@@ -11,7 +11,7 @@ function App() {
   if (toogle) {
     mainOrGame = <Game />;
   } else {
-    mainOrGame = <Start setToogle={setToogle} />;
+    mainOrGame = <Splash setToogle={setToogle} />;
   }
 
   return <div className='App'>{mainOrGame}</div>;

@@ -1,3 +1,37 @@
-input {
-  text-align: center;
+@import url('../../CSS/Fonts/Roboto.css');
+
+@media (min-width: 375px) {
+  .bet-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+  }
+  
+  input {
+    text-align: center;
+    border: 1px solid #532577;
+    border-radius: 1rem;
+    width: 5rem;
+    height: 1.5rem;
+  }
+
+  #bet-button {
+    border: 1px solid #532577;
+    border-radius: 1rem;
+    background-color: white;
+    width: 5rem;
+    height: 1.8rem;
+    font: 'Roboto', Verdana, sans-serif;
+    color: #532577;
+  }
+
+  #deal-button {
+    border: 1px solid #532577;
+    border-radius: 1rem;
+    background-color: white;
+    width: 5rem;
+    height: 1.8rem;
+    font: 'Roboto', Verdana, sans-serif;
+    color: #532577;
+  }
 }

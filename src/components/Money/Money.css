@@ -1,0 +1,10 @@
+@import url('../../CSS/Fonts/Roboto.css');
+
+@media (min-width: 375px) {
+  .money-container {
+    font: 75%/1 'Roboto', Verdana, sans-serif;
+    background: -webkit-linear-gradient(#00b176, #04be3c);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

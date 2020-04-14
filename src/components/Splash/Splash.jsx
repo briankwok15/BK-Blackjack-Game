@@ -1,15 +1,15 @@
 import React from 'react';
 
-import logo from '../../assets/Images/spade.png';
-import './Start.css';
-import '../../Animate CSS/animate.css';
+import { Logo } from '../Logo/Logo';
 
-export const Start = ({ setToogle }) => {
+import './Splash.css';
+import '../../CSS/Animate/animate.css';
+
+export const Splash = ({ setToogle }) => {
   return (
     <div>
       <div className='animated jackInTheBox logo-container'>
-        <h1 id='title'>BlackJack!</h1>
-        <img id='logo' alt='logo' src={logo} />
+        <Logo />
       </div>
       <button
         className='animated fadeInLeftBig play-button'

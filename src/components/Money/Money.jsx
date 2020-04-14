@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './Money.css';
+
 export const Money = ({ betAmount, totalMoney }) => {
   return (
-    <>
-      <h3>Bet Amount: {betAmount}</h3>
-      <h3>Total Money: {totalMoney}</h3>
-    </>
+    <div className='money-container'>
+      <h3>bet amount: {betAmount}</h3>
+      <h3>total money: {totalMoney}</h3>
+    </div>
   );
 };

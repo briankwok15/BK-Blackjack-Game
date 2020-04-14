@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Score.css';
 // REFACTOR if/else if statemnts?
 
 export const Score = ({ whoseHand, score, totalScore, isHidden }) => {
@@ -15,11 +16,11 @@ export const Score = ({ whoseHand, score, totalScore, isHidden }) => {
     whoseHand = `${whoseHand} score: `;
   }
   return (
-    <>
-      <h2>
+    <div className='score'>
+      <h1>
         {whoseHand}
         {renderScore}
-      </h2>
-    </>
+      </h1>
+    </div>
   );
 };

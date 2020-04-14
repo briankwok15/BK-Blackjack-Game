@@ -4,10 +4,10 @@ import { Score } from '../Score/Score';
 // REFACTOR using SASS?
 // to conditional render black and red cards - hidden and non-hidden cards?
 import './Hand.css';
-import '../../Animate CSS/animate.css';
+import '../../CSS/Animate/animate.css';
 
 export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
-  console.log('hidden', isHidden)
+  console.log('hidden', isHidden);
   const currentHand = hand.map((card, index) => {
     // css for hidden card
     let cardClassName = 'animated fadeInDown card';

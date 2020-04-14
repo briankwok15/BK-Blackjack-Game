@@ -13,13 +13,18 @@ export const Bet = ({ lockBet, firstDeal, isBetLocked }) => {
   const [amount, setAmount] = useState(0);
 
   return (
-    <div>
+    <div className='bet-container'>
       <input
         type='text'
+        placeholder='$'
         onChange={(event) => setAmount(parseInt(event.target.value))}
       />
-      <button onClick={() => lockBet(amount)}>Place Bet</button>
-      <button onClick={() => firstDeal()}>Deal</button>
+      <button id='bet-button' onClick={() => lockBet(amount)}>
+        Place Bet
+      </button>
+      <button id='deal-button' onClick={() => firstDeal()}>
+        Deal
+      </button>
     </div>
   );
 };
