@@ -3,9 +3,10 @@
   width: 4rem;
   border: 1px solid black;
   border-radius: 0.8rem;
+  background-color: white;
   margin-right: 1rem;
 
-  /* animation-duration: 1; */
+  animation-duration: 2s;
   animation-iteration-count: 1;
 }
 
@@ -15,9 +16,10 @@
   width: 4rem;
   border: 1px solid black;
   border-radius: 0.8rem;
+  background-color: white;
   margin-right: 1rem;
 
-  /* animation-duration: 1; */
+  animation-duration: 2s;
   animation-iteration-count: 1;
 }
 

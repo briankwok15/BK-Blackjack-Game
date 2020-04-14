@@ -7,7 +7,9 @@ import { Hand } from '../components/Hand/Hand';
 import { Controls } from '../components/Controls/Controls';
 import { DisplayWinner } from '../components/DisplayWinner/DisplayWinner';
 
-export class Game extends Component {
+import './Game.css';
+
+class Game extends Component {
   constructor() {
     super();
     this.state = {
@@ -293,8 +295,8 @@ export class Game extends Component {
         <header>
           <Money betAmount={betAmount} totalMoney={totalMoney} />
         </header>
-        {startButton}
-        {newRoundButton}
+        <div className='start-button-container'>{startButton}</div>
+        <div className='reload-button-container'>{newRoundButton}</div>
         <Bet
           lockBet={lockBet}
           firstDeal={firstDeal}
@@ -317,8 +319,9 @@ export class Game extends Component {
         <footer>
           <DisplayWinner winner={winner} />
         </footer>
-        {console.log('amount', betAmount)}
       </>
     );
   }
 }
+
+export default Game;
