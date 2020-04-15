@@ -48,3 +48,29 @@
     transform: translateY(8px);
   }
 }
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .play-button {
+    height: 5rem;
+    width: 9rem;
+    border-radius: 1rem;
+    font: 100%/1.5 'Roboto', Verdana, sans-serif;
+    font-size: 2rem;
+    color: #532577;
+    padding: 1rem 1rem;
+    box-shadow: 0 0.5rem 5px rgb(116, 113, 113);
+  }
+}
+
+@media (min-width: 1024px) {
+  .play-button {
+    height: 6.5rem;
+    width: 11rem;
+    border-radius: 1.5rem;
+    font: 100%/1.5 'Roboto', Verdana, sans-serif;
+    font-size: 2.5rem;
+    color: #532577;
+    padding: 1.5rem 1.5rem;
+    box-shadow: 0 0.5rem 5px rgb(116, 113, 113);
+  }
+}

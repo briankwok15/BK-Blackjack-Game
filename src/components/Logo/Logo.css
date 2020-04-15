@@ -18,3 +18,21 @@
     width: 3rem;
   }
 }
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .logo-container {
+    font-size: 2rem;
+  }
+
+  #logo {
+    margin-top: 10rem;
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-container {
+    font-size: 3rem;
+  }
+}

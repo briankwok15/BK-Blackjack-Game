@@ -6,7 +6,7 @@
     justify-content: space-around;
     margin-top: 0.5rem;
   }
-  
+
   input {
     text-align: center;
     border: 1px solid #532577;
@@ -33,5 +33,70 @@
     height: 1.8rem;
     font: 'Roboto', Verdana, sans-serif;
     color: #532577;
+  }
+}
+
+@media (min-width: 375px) and (min-height: 812px) {
+  .bet-container {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .bet-container {
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  input {
+    border-radius: 2rem;
+    width: 6rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    color: green;
+    font-weight: bold;
+  }
+
+  #bet-button {
+    border-radius: 2rem;
+    width: 6rem;
+    height: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 1rem;
+  }
+
+  #deal-button {
+    border-radius: 2rem;
+    width: 6rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  input {
+    border-radius: 2rem;
+    width: 7rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    color: green;
+    font-weight: bold;
+  }
+
+  #bet-button {
+    border-radius: 2rem;
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+
+  #deal-button {
+    border-radius: 2rem;
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.5rem;
   }
 }

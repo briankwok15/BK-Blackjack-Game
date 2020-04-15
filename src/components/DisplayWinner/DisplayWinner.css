@@ -17,3 +17,12 @@
     animation-duration: 1.5s;
   }
 }
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .winner {
+    font: 200%/2.5 'Roboto', Verdana, sans-serif;
+    color: white;
+    width: fit-content;
+    padding: 0 1.5em;
+  }
+}

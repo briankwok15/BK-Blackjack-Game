@@ -34,7 +34,8 @@
 
 /*height may need to be re-adjusted for hidden card to be responsive*/
 .hidden-card {
-  height: 6.3rem;
+  /* height: 6.3rem; */
+  height: fit-content;
   width: 4rem;
   border: 1px solid #018d8b;
   border-radius: 0.8rem;
@@ -45,4 +46,25 @@
   /*animation*/
   /* animation-duration: 1; */
   animation-iteration-count: 1;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 6rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+  }
+
+  .card-red {
+    width: 6rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+  }
+
+  .hidden-card {
+    height: fit-content;
+    width: 6rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+  }
 }
