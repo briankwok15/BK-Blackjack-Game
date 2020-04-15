@@ -1,0 +1,17 @@
+@import url('../../CSS/Fonts/Roboto.css');
+
+@media (min-width: 375px) {
+  .score {
+    font: 100%/1.5 'Roboto', Verdana, sans-serif;
+    background: -webkit-linear-gradient(#d499ff, #00a4a1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px){
+  .score {
+    font-size: 1.5rem;
+  }
+}

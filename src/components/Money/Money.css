@@ -1,0 +1,28 @@
+@import url('../../CSS/Fonts/Roboto.css');
+
+@media (min-width: 375px) {
+  .money-container {
+    font: 75%/1 'Roboto', Verdana, sans-serif;
+    background: -webkit-linear-gradient(#00b176, #04be3c);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #bet-amount {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 1024px) {
+  .money-container {
+    font: 125%/1.5 'Roboto', Verdana, sans-serif;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .money-container {
+    font: 200%/1 'Roboto', Verdana, sans-serif;
+    margin-top: 1rem;
+  }
+}
