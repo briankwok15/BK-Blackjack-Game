@@ -24,3 +24,10 @@
     margin-top: 1rem;
   }
 }
+
+@media (min-width: 1025px) {
+  .money-container {
+    font: 150%/1 'Roboto', Verdana, sans-serif;
+    margin-top: 0;
+  }
+}
