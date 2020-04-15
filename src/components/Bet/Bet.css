@@ -76,7 +76,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (min-height: 1366px) {
   input {
     border-radius: 2rem;
     width: 7rem;
@@ -98,5 +98,38 @@
     width: 8rem;
     height: 4rem;
     font-size: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bet-container {
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  input {
+    border-radius: 2rem;
+    width: 7rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    color: green;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+
+  #bet-button {
+    border-radius: 2rem;
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  #deal-button {
+    border-radius: 2rem;
+    width: 8rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    margin-right: 1rem;
   }
 }
