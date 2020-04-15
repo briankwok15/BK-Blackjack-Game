@@ -294,14 +294,6 @@ class Game extends Component {
       );
     }
 
-    // remove betting controls
-    let betControls = (
-      <Bet lockBet={lockBet} firstDeal={firstDeal} isBetLocked={isBetLocked} />
-    );
-    if (isDealOn) {
-      betControls = null;
-    }
-
     return (
       <>
         <div className='game'>
@@ -316,7 +308,13 @@ class Game extends Component {
               <div className='start-button-container'>{startButton}</div>
               <div className='reload-button-container'>{newRoundButton}</div>
             </section>
-            <section>{betControls}</section>
+            <section>
+              <Bet
+                lockBet={lockBet}
+                firstDeal={firstDeal}
+                isBetLocked={isBetLocked}
+              />
+            </section>
             <section>
               <Hand
                 whoseHand='dealer'
