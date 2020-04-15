@@ -21,8 +21,12 @@
 @media (min-width: 768px) and (min-height: 1024px) {
   .winner {
     font: 200%/2.5 'Roboto', Verdana, sans-serif;
-    color: white;
-    width: fit-content;
     padding: 0 1.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .winner {
+    font: 250%/2.5 'Roboto', Verdana, sans-serif;
   }
 }

@@ -9,3 +9,9 @@
     margin-bottom: 0;
   }
 }
+
+@media (min-width: 1024px){
+  .score {
+    font-size: 1.5rem;
+  }
+}
