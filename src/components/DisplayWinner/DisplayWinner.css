@@ -12,6 +12,7 @@
     background-color: black;
     width: fit-content;
     padding: 0 1em;
+    margin-top: 0;
 
     /*animated*/
     animation-duration: 1.5s;
