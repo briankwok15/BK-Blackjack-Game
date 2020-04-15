@@ -36,6 +36,7 @@
 .hidden-card {
   /* height: 6.3rem; */
   height: fit-content;
+  color: red;
   width: 4rem;
   border: 1px solid #018d8b;
   border-radius: 0.8rem;
