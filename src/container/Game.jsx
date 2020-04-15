@@ -331,7 +331,9 @@ class Game extends Component {
                 totalScore={totalScore}
               />
             </section>
-            <Controls hit={hit} stand={stand} isDealOn={isDealOn} />
+            <section>
+              <Controls hit={hit} stand={stand} isDealOn={isDealOn} />
+            </section>
             <footer>
               <DisplayWinner winner={winner} />
             </footer>

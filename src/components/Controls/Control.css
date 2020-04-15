@@ -1,0 +1,27 @@
+@import url('../../CSS/Fonts/Roboto.css');
+
+@media (min-width: 375px) {
+  .controls {
+  }
+
+  #hit {
+    border: 1px solid #532577;
+    margin-right: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    width: 5rem;
+    height: 1.8rem;
+    font: 'Roboto', Verdana, sans-serif;
+    color: #532577;
+  }
+
+  #stand {
+    border: 1px solid #532577;
+    border-radius: 1rem;
+    background-color: white;
+    width: 5rem;
+    height: 1.8rem;
+    font: 'Roboto', Verdana, sans-serif;
+    color: #532577;
+  }
+}

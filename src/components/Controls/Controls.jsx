@@ -1,12 +1,18 @@
 import React from 'react';
 
+import './Control.css';
+
 export const Controls = ({ hit, stand, isDealOn }) => {
   let control = null;
   if (isDealOn) {
     control = (
-      <div>
-        <button onClick={() => hit('player')}>Hit</button>
-        <button onClick={() => stand()}>Stand</button>
+      <div className='controls'>
+        <button id='hit' onClick={() => hit('player')}>
+          Hit
+        </button>
+        <button id='stand' onClick={() => stand()}>
+          Stand
+        </button>
       </div>
     );
   }

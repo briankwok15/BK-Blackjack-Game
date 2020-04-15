@@ -1,0 +1,19 @@
+@import url('../../CSS/Fonts/Roboto.css');
+
+@media (min-width: 375px) {
+  .winner-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .winner {
+    font: 150%/2 'Roboto', Verdana, sans-serif;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding: 0 1em;
+
+    /*animated*/
+    animation-duration: 1.5s;
+  }
+}
