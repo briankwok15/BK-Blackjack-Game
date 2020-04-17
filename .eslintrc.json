@@ -21,5 +21,8 @@
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
-  "rules": {}
+  "rules": {
+    "no-plusplus": "off",
+    "class-methods-use-this": "off"
+  }
 }

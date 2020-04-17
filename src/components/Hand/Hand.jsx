@@ -7,7 +7,6 @@ import './Hand.css';
 import '../../CSS/Animate/animate.css';
 
 export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
-  console.log('hidden', isHidden);
   const currentHand = hand.map((card, index) => {
     // css for hidden card
     let cardClassName = 'animated fadeInDown card';
