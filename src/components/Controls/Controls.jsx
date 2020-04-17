@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Control.css';
 
-export const Controls = ({ hit, stand, isDealOn }) => {
+const Controls = ({ hit, stand, isDealOn }) => {
   let control = null;
   if (isDealOn) {
     control = (
-      <div className='controls'>
-        <button id='hit' onClick={() => hit('player')}>
+      <div className="controls">
+        <button type="submit" id="hit" onClick={() => hit('player')}>
           Hit
         </button>
-        <button id='stand' onClick={() => stand()}>
+        <button type="submit" id="stand" onClick={() => stand()}>
           Stand
         </button>
       </div>
@@ -18,3 +19,11 @@ export const Controls = ({ hit, stand, isDealOn }) => {
   }
   return <>{control}</>;
 };
+
+Controls.propTypes = {
+  hit: PropTypes.func.isRequired,
+  stand: PropTypes.func.isRequired,
+  isDealOn: PropTypes.bool.isRequired,
+};
+
+export default Controls;
