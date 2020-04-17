@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './Bet.css';
 
-// TODO: Need to reset inputbox to empty string && input not a number
-
-/**
- * render:
- * inputbox to place bet
- * button to lockbet
- */
-export const Bet = ({ lockBet, firstDeal, isBetLocked }) => {
+const Bet = ({ lockBet, firstDeal }) => {
   const [amount, setAmount] = useState(0);
 
   return (
-    <div className='bet-container'>
+    <div className="bet-container">
       <input
-        type='text'
-        placeholder='$'
-        onChange={(event) => setAmount(parseInt(event.target.value))}
+        type="text"
+        placeholder="$"
+        onChange={(event) => setAmount(parseInt(event.target.value, 10))}
       />
-      <button id='bet-button' onClick={() => lockBet(amount)}>
+      <button type="submit" id="bet-button" onClick={() => lockBet(amount)}>
         Place Bet
       </button>
-      <button id='deal-button' onClick={() => firstDeal()}>
+      <button type="submit" id="deal-button" onClick={() => firstDeal()}>
         Deal
       </button>
     </div>
   );
 };
+
+Bet.propTypes = {
+  lockBet: PropTypes.func.isRequired,
+  firstDeal: PropTypes.func.isRequired,
+};
+
+export default Bet;

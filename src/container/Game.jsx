@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import '../components/Money/Money';
 import { Money } from '../components/Money/Money';
-import { Bet } from '../components/Bet/Bet';
+
+import Bet from '../components/Bet/Bet';
 import { Hand } from '../components/Hand/Hand';
 import { Controls } from '../components/Controls/Controls';
 import { DisplayWinner } from '../components/DisplayWinner/DisplayWinner';
@@ -109,9 +109,8 @@ class Game extends Component {
   totalScore(score) {
     if (score.hardScore === 21 || score.softScore === 21) return 21;
     if (score.softScore > 21) return score.hardScore;
-    else {
-      return score.softScore;
-    }
+
+    return score.softScore;
   }
 
   // hit - need to add feature to not be able to hit before hand is delt
@@ -142,7 +141,6 @@ class Game extends Component {
         const playerHitScore = this.totalScore(playerScore);
         if (playerHitScore > 21) {
           this.stand();
-          return;
         }
       }
     );
@@ -194,7 +192,6 @@ class Game extends Component {
           this.setState({ isDealOn: true }, () => {
             this.stand();
           });
-          return;
         }
       }
     );
@@ -276,7 +273,7 @@ class Game extends Component {
 
     // start game button
     let startButton = (
-      <button id='start-button' onClick={() => this.createDeck()}>
+      <button id="start-button" onClick={() => this.createDeck()}>
         Start Game!
       </button>
     );
@@ -288,7 +285,7 @@ class Game extends Component {
     let newRoundButton = null;
     if (winner) {
       newRoundButton = (
-        <button id='new-round-button' onClick={() => this.newRound()}>
+        <button id="new-round-button" onClick={() => this.newRound()}>
           New Round
         </button>
       );
@@ -296,7 +293,7 @@ class Game extends Component {
 
     return (
       <>
-        <div className='game'>
+        <div className="game">
           <header>
             <Logo />
           </header>
@@ -305,26 +302,22 @@ class Game extends Component {
               <Money betAmount={betAmount} totalMoney={totalMoney} />
             </section>
             <section>
-              <div className='start-button-container'>{startButton}</div>
-              <div className='reload-button-container'>{newRoundButton}</div>
+              <div className="start-button-container">{startButton}</div>
+              <div className="reload-button-container">{newRoundButton}</div>
             </section>
             <section>
-              <Bet
-                lockBet={lockBet}
-                firstDeal={firstDeal}
-                isBetLocked={isBetLocked}
-              />
+              <Bet lockBet={lockBet} firstDeal={firstDeal} />
             </section>
             <section>
               <Hand
-                whoseHand='dealer'
+                whoseHand="dealer"
                 hand={dealerHand}
                 score={dealerScore}
                 isHidden={isHidden}
                 totalScore={totalScore}
               />
               <Hand
-                whoseHand='player'
+                whoseHand="player"
                 hand={playerHand}
                 score={playerScore}
                 totalScore={totalScore}
