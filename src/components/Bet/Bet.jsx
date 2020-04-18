@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 
 import './Bet.css';
 
+/**
+ *
+ * @param {Function} lockedBet - to set bet amount in Game container
+ * @param {Function} firstDeal - once bet is placed, allowed to deal cards
+ */
+
 const Bet = ({ lockBet, firstDeal }) => {
   const [amount, setAmount] = useState(0);
 

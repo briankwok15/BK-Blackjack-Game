@@ -5,7 +5,7 @@ import { Money } from '../components/Money/Money';
 import Bet from '../components/Bet/Bet';
 import { Hand } from '../components/Hand/Hand';
 import Controls from '../components/Controls/Controls';
-import { DisplayWinner } from '../components/DisplayWinner/DisplayWinner';
+import DisplayWinner from '../components/DisplayWinner/DisplayWinner';
 import { Logo } from '../components/Logo/Logo';
 
 import './Game.css';
