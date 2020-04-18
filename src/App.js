@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import Game from '../src/container/Game';
-import { Splash } from '../src/components/Splash/Splash';
+import Game from './container/Game';
+import Splash from './components/Splash/Splash';
 
 import './App.css';
-
+/**
+ * Renders:
+ * Splash compnent or Game container
+ */
 function App() {
   const [toogle, setToogle] = useState(false);
 
@@ -14,7 +17,7 @@ function App() {
     mainOrGame = <Splash setToogle={setToogle} />;
   }
 
-  return <div className='App'>{mainOrGame}</div>;
+  return <div className="App">{mainOrGame}</div>;
 }
 
 export default App;

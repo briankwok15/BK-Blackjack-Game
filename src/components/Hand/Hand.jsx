@@ -1,13 +1,22 @@
 import React from 'react';
-import { Score } from '../Score/Score';
+import PropTypes from 'prop-types';
 
-// REFACTOR using SASS?
-// to conditional render black and red cards - hidden and non-hidden cards?
+import Score from '../Score/Score';
+
 import './Hand.css';
 import '../../CSS/Animate/animate.css';
 
-export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
-  console.log('hidden', isHidden);
+/**
+ *
+ * @param {String} whoseHand - 'dealer' or 'player'
+ * @param {Array} hand - [{ card.suit, card.value }]
+ * @param {Score} score - { hardScore, softScore }
+ * @param {Boolean} isHidden - true or false - for dealer hand to hide second card
+ * @param {Function} totalScore - function to calculate score based on card
+ * Render:
+ * Score Component
+ */
+const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
   const currentHand = hand.map((card, index) => {
     // css for hidden card
     let cardClassName = 'animated fadeInDown card';
@@ -18,7 +27,7 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
       cardClassName = 'animated fadeInDown hidden-card';
     }
     return (
-      <div className={cardClassName} key={index}>
+      <div className={cardClassName} key={`${(whoseHand, index)}`}>
         <h3>{card.value}</h3>
         <h3>{card.suit}</h3>
       </div>
@@ -27,7 +36,7 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
 
   return (
     <>
-      <div className='hand'>{currentHand}</div>
+      <div className="hand">{currentHand}</div>
       <Score
         whoseHand={whoseHand}
         score={score}
@@ -37,3 +46,13 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
     </>
   );
 };
+
+Hand.propTypes = {
+  whoseHand: PropTypes.string.isRequired,
+  hand: PropTypes.array.isRequired,
+  score: PropTypes.object.isRequired,
+  isHidden: PropTypes.bool,
+  totalScore: PropTypes.func.isRequired,
+};
+
+export default Hand;

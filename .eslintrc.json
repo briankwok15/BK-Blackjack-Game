@@ -21,5 +21,11 @@
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
-  "rules": {}
+  "rules": {
+    "no-plusplus": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/forbid-prop-types": ["off", { "forbid": "object" }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
 }
