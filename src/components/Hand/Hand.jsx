@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Score } from '../Score/Score';
 
-// REFACTOR using SASS?
-// to conditional render black and red cards - hidden and non-hidden cards?
 import './Hand.css';
 import '../../CSS/Animate/animate.css';
 
-export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
+const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
   const currentHand = hand.map((card, index) => {
     // css for hidden card
     let cardClassName = 'animated fadeInDown card';
@@ -26,7 +26,7 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
 
   return (
     <>
-      <div className='hand'>{currentHand}</div>
+      <div className="hand">{currentHand}</div>
       <Score
         whoseHand={whoseHand}
         score={score}
@@ -36,3 +36,13 @@ export const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
     </>
   );
 };
+
+Hand.propTypes = {
+  whoseHand: PropTypes.string.isRequired,
+  hand: PropTypes.array.isRequired,
+  score: PropTypes.object.isRequired,
+  isHidden: PropTypes.bool,
+  totalScore: PropTypes.func.isRequired,
+};
+
+export default Hand;

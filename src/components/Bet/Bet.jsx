@@ -7,6 +7,10 @@ import './Bet.css';
  *
  * @param {Function} lockedBet - to set bet amount in Game container
  * @param {Function} firstDeal - once bet is placed, allowed to deal cards
+ * Renders:
+ * Inputbox for bet amount
+ * Place bet button
+ * Deal button
  */
 
 const Bet = ({ lockBet, firstDeal }) => {

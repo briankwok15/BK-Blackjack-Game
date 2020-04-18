@@ -23,6 +23,7 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "no-plusplus": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }

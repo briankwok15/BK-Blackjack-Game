@@ -8,6 +8,8 @@ import './Control.css';
  * @param {Function} hit - add a card and update player's score
  * @param {stand} stand - player decides to stop, player bust, or player gets blackjack
  * @param {Boolean} isDealOn - allows to render controls button if set to true
+ * Renders:
+ * Hit or Stand button
  */
 const Controls = ({ hit, stand, isDealOn }) => {
   let control = null;

@@ -7,11 +7,11 @@ import '../../CSS/Animate/animate.css';
 /**
  *
  * @param {String} winner - dealer, player, or PUSH
- * renders the result of the hand
+ * Renders the result of the hand
  */
 const DisplayWinner = ({ winner }) => {
   let whoWon;
-  if (!winner) {
+  if (winner === '') {
     whoWon = null;
   } else if (winner === 'PUSH') {
     whoWon = <h1 className="animated fadeInLeftBig winner">{winner}</h1>;

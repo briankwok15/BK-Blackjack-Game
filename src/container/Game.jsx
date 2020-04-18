@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import { Money } from '../components/Money/Money';
-
+import Money from '../components/Money/Money';
 import Bet from '../components/Bet/Bet';
-import { Hand } from '../components/Hand/Hand';
+import Hand from '../components/Hand/Hand';
 import Controls from '../components/Controls/Controls';
 import DisplayWinner from '../components/DisplayWinner/DisplayWinner';
-import { Logo } from '../components/Logo/Logo';
+import Logo from '../components/Logo/Logo';
 
 import './Game.css';
 
@@ -39,7 +38,7 @@ class Game extends Component {
      */
     this.state = {
       deck: [],
-      winner: null,
+      winner: '',
       dealerHand: [],
       playerHand: [],
       dealerScore: { hardScore: 0, softScore: 0 },
@@ -98,7 +97,6 @@ class Game extends Component {
       amount === 0
     )
       return;
-    console.log('amount', typeof amount);
     this.setState((prevState) => ({
       betAmount: amount,
       totalMoney: prevState.totalMoney - amount,
@@ -291,7 +289,7 @@ class Game extends Component {
       (prevState) => ({
         rounds: prevState.rounds + 1,
         isGameOn: true, // allows for a new bet to be placed
-        winner: null,
+        winner: '',
         betAmount: 0,
         dealerHand: [],
         playerHand: [],
