@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 
 import './Money.css';
 
+/**
+ *
+ * @param {Integer} betAmount - how much money the player bet
+ * @param {Integer} totalMoney - how much money the player has left
+ * Renders:
+ * Bet amount
+ * Player's total money
+ */
 const Money = ({ betAmount, totalMoney }) => {
   return (
     <div className="money-container">

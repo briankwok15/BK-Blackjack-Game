@@ -3,6 +3,11 @@ import React from 'react';
 import logo from '../../assets/Images/spade.png';
 import './Logo.css';
 
+/**
+ * Renders:
+ * Title
+ * Image
+ */
 const Logo = () => {
   return (
     <div className="logo-container">

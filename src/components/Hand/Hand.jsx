@@ -1,11 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Score } from '../Score/Score';
+import Score from '../Score/Score';
 
 import './Hand.css';
 import '../../CSS/Animate/animate.css';
 
+/**
+ *
+ * @param {String} whoseHand - 'dealer' or 'player'
+ * @param {Array} hand - [{ card.suit, card.value }]
+ * @param {Score} score - { hardScore, softScore }
+ * @param {Boolean} isHidden - true or false - for dealer hand to hide second card
+ * @param {Function} totalScore - function to calculate score based on card
+ * Render:
+ * Score Component
+ */
 const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
   const currentHand = hand.map((card, index) => {
     // css for hidden card
@@ -17,7 +27,7 @@ const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
       cardClassName = 'animated fadeInDown hidden-card';
     }
     return (
-      <div className={cardClassName} key={index}>
+      <div className={cardClassName} key={`${(whoseHand, index)}`}>
         <h3>{card.value}</h3>
         <h3>{card.suit}</h3>
       </div>
