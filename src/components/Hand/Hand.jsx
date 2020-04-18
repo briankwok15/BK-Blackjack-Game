@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Score from '../Score/Score';
 
 import './Hand.css';
-import '../../CSS/Animate/animate.css';
+import '../../css/Animate/animate.css';
 
 /**
  *
