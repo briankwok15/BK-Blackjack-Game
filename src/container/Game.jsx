@@ -10,6 +10,11 @@ import Logo from '../components/Logo/Logo';
 import './Game.css';
 
 /**
+ * TODO:
+ * ADD a GAME OVER (out of money) feature
+ */
+
+/**
  * Renders:
  * Splash Component (includes Logo & play button)
  * Logo
@@ -347,7 +352,7 @@ class Game extends Component {
 
     return (
       <>
-        <div className="game">
+        <div data-testid="game-test" className="game">
           <header>
             <Logo />
           </header>
