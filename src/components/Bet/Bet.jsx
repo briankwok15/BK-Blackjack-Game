@@ -19,14 +19,25 @@ const Bet = ({ lockBet, firstDeal }) => {
   return (
     <div className="bet-container">
       <input
+        data-testid="bet-input-test"
         type="text"
         placeholder="$"
         onChange={(event) => setAmount(parseInt(event.target.value, 10))}
       />
-      <button type="submit" id="bet-button" onClick={() => lockBet(amount)}>
+      <button
+        data-testid="place-bet-button"
+        type="submit"
+        id="bet-button"
+        onClick={() => lockBet(amount)}
+      >
         Place Bet
       </button>
-      <button type="submit" id="deal-button" onClick={() => firstDeal()}>
+      <button
+        data-testid="deal-button"
+        type="submit"
+        id="deal-button"
+        onClick={() => firstDeal()}
+      >
         Deal
       </button>
     </div>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo';
 
 import './Splash.css';
-import '../../CSS/Animate/animate.css';
+import '../../css/Animate/animate.css';
 
 /**
  *

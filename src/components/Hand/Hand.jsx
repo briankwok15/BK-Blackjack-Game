@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Score from '../Score/Score';
 
 import './Hand.css';
-import '../../CSS/Animate/animate.css';
+import '../../css/Animate/animate.css';
 
 /**
  *
@@ -36,7 +36,9 @@ const Hand = ({ whoseHand, hand, score, isHidden, totalScore }) => {
 
   return (
     <>
-      <div className="hand">{currentHand}</div>
+      <div data-testid="hand-test" className="hand">
+        {currentHand}
+      </div>
       <Score
         whoseHand={whoseHand}
         score={score}
