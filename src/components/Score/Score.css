@@ -1,4 +1,4 @@
-@import url('../../css/Fonts/Roboto.css');
+@import url('../../CSS/Fonts/Roboto.css');
 
 @media (min-width: 375px) {
   .score {
@@ -13,4 +13,3 @@
     font-size: 1.5rem;
   }
 }
-

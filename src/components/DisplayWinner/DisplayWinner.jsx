@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './DisplayWinner.css';
-import '../../css/Animate/animate.css';
+import '../../CSS/Animate/animate.css';
 
 /**
  *
