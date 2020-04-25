@@ -14,8 +14,10 @@ import './Money.css';
 const Money = ({ betAmount, totalMoney }) => {
   return (
     <div className="money-container">
-      <h3 id="bet-amount">bet amount: {betAmount}</h3>
-      <h3>total money: {totalMoney}</h3>
+      <h3 data-testid="bet-amount-test" id="bet-amount">
+        bet amount: {betAmount}
+      </h3>
+      <h3 data-testid="total-money-test">total money: {totalMoney}</h3>
     </div>
   );
 };
