@@ -1,6 +1,6 @@
 ## BK Blackjack Game!
 
-![Screen Capture](public/blackjack.gif)
+![Screen Capture](public/blackjack-game.gif)
 
 - https://bk-blackjack-game.netlify.app/
 - Standard BlackJack Game
