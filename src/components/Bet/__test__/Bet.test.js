@@ -23,7 +23,6 @@ test('when user input bet, test that lockbet will be', () => {
   ReactTestUtils.Simulate.click(betButton);
   // assert
   expect(betMock).toHaveBeenCalledTimes(1);
-  // expect(betMock).toHaveBeenCalledWith(betInput.value);
 });
 
 test('when user clicks deal - hands, score - and controls will display', () => {

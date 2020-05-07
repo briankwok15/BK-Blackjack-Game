@@ -17,7 +17,7 @@ test('on deal - if isHidden is true, dealer second card is face down', () => {
     { value: 8, suit: '♠' },
   ];
   const fakeScore = { hardScore: 15, softScore: 15 };
-  const { getByText } = render(
+  const { getByText, container } = render(
     <Hand
       whoseHand={whoseHand}
       hand={fakeHand}
@@ -26,14 +26,13 @@ test('on deal - if isHidden is true, dealer second card is face down', () => {
       totalScore={totalScore}
     />
   );
-  const hiddenCard = document.getElementsByClassName(
+  const hiddenCard = container.getElementsByClassName(
     'animated fadeInDown hidden-card'
   );
-  const nonHiddenCard = document.getElementsByClassName(
+  const nonHiddenCard = container.getElementsByClassName(
     'animated fadeInDown card'
   );
   const scoreNode = getByText('dealer score:');
-
   // act
   // assert
   expect(hiddenCard).toBeTruthy(); // hidden card
