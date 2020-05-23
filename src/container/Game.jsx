@@ -6,6 +6,7 @@ import Hand from '../components/Hand/Hand';
 import Controls from '../components/Controls/Controls';
 import DisplayWinner from '../components/DisplayWinner/DisplayWinner';
 import Logo from '../components/Logo/Logo';
+import GameOver from '../components/GameOver/GameOver';
 
 import './Game.css';
 
@@ -51,7 +52,7 @@ class Game extends Component {
       isGameOn: false,
       betAmount: 0,
       isBetLocked: false,
-      totalMoney: 100,
+      totalMoney: 0,
       isDealOn: false,
       isHidden: true,
       rounds: 0,
@@ -61,6 +62,7 @@ class Game extends Component {
     this.totalScore = this.totalScore.bind(this);
     this.hit = this.hit.bind(this);
     this.stand = this.stand.bind(this);
+    this.reloadTotalMoney = this.reloadTotalMoney.bind(this);
   }
 
   /**
@@ -311,6 +313,15 @@ class Game extends Component {
     );
   }
 
+  /**
+   * Allows user to reload total money once user runs out of money
+   * $100
+   */
+  reloadTotalMoney() {
+    const hundo = 100;
+    this.setState({ totalMoney: 100 });
+  }
+
   render() {
     const {
       isDealOn,
@@ -350,6 +361,12 @@ class Game extends Component {
       );
     }
 
+    // reload money button
+    let reloadButton = null;
+    if (!totalMoney && !betAmount) {
+      reloadButton = <GameOver reloadTotalMoney={this.reloadTotalMoney} />;
+    }
+
     return (
       <>
         <div data-testid="game-test" className="game">
@@ -366,6 +383,7 @@ class Game extends Component {
             </section>
             <section>
               <Bet lockBet={lockBet} firstDeal={firstDeal} />
+              {reloadButton}
             </section>
             <section>
               <Hand

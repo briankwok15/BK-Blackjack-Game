@@ -1,0 +1,56 @@
+@import url('../../CSS/Fonts/Roboto.css');
+
+.game-over-container {
+  display: flex;
+  justify-content: center;
+
+  /*animated*/
+  animation-duration: 1.5s;
+}
+
+.game-over-inner {
+  font: 150%/2 'Roboto', Verdana, sans-serif;
+  color: white;
+  background-color: black;
+  padding: 0 1em;
+  margin-top: 0;
+}
+#reload {
+  height: 3rem;
+  width: 7.5rem;
+  border: 1px solid #00a4a1;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 0.5rem 5px rgb(116, 113, 113);
+  font: 100%/1.5 'Roboto', Verdana, sans-serif;
+  color: #532577;
+  width: fit-content;
+}
+
+#reload:hover {
+  background-color: rgb(202, 202, 202);
+}
+
+#reload:active {
+  /*press down effect*/
+  transform: translateY(8px);
+}
+
+@media (min-width: 375px) {
+  .game-over-container {
+    margin-top: 2rem;
+  }
+  .game-over-inner {
+    height: 12rem;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 1366px) {
+  .game-over-container {
+    margin-top: 2rem;
+  }
+  .game-over-inner {
+    height: 15rem;
+    width: 20rem;
+  }
+}
