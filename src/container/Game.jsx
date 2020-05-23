@@ -52,7 +52,7 @@ class Game extends Component {
       isGameOn: false,
       betAmount: 0,
       isBetLocked: false,
-      totalMoney: 0,
+      totalMoney: 100,
       isDealOn: false,
       isHidden: true,
       rounds: 0,
